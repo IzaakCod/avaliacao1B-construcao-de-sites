@@ -8,23 +8,52 @@
 </head>
 
 <body>
-    <h1>Cadastro de Usuário</h1>
+    <header>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="treinos.html"> Treinos</a>
+            <a href="alimentacao.html">Receitas Fit</a>
+            <a href="login.html">Cadastro</a>
+        </nav>
 
-    <form action="https://www.w3schools.com/action_page.php" method="POST">
-        <input type="hidden" name="id" value="10">
-        Nome: <input type="text" name="nome" minlength="5" maxlength="10" required=""><br>
-        Telefone: <input type="text" name="número" minlength="11" maxlength="11" required=""><br>
-        E-mail: <input type="email" name="email" required=""><br>
-        Data de nascimento: <input type="date" name="dataNascimento" required=""><br>
-        Gênero:<br>
-        <input type="radio" name="genero" value="M" checked=""> Masculino<br>
-        <input type="radio" name="genero" value="F"> Feminino<br>
-        <input type="radio" name="genero" value="N"> Prefiro não informar<br>
-        Senha: <input type="text" name="senha" required=""><br>
-        <input type="submit" value="Cadastrar Usuário">
+        <h1>Cadastro de Usuário</h1>
+    </header>
+    <main>
+        <form action="https://www.w3schools.com/action_page.php" method="POST">
+            <input type="hidden" name="id" value="10">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" minlength="5" maxlength="15" required=""><br>
 
-    </form>
-    <hr>
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" maxlength="11" pattern="[0-9]{11}" required=""><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required=""><br>
+
+            <label for="data">Data de nascimento:</label>
+            <input type="date" id="data" name="dataNascimento" required=""><br>
+
+            Gênero:<br>
+            <label>
+                <input type="radio" name="genero" value="M"> Masculino
+            </label><br>
+
+            <label>
+                <input type="radio" name="genero" value="F"> Feminino
+            </label><br>
+
+            <label>
+                <input type="radio" name="genero" value="N"> Prefiro não informar
+            </label><br>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" minlength="6" required=""><br>
+            <hr>
+            <label for="obs">Observações:</label>
+            <textarea name="observacoes" id="obs" rows="4" cols="30"></textarea><br>
+            <input type="submit" value="Cadastrar Usuário">
+        </form>
+    </main>
 
     <footer>
         Criado e desenvolvido por Izaak &copy; 2026 -
