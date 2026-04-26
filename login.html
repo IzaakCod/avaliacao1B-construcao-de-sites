@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro de Usuário</title>
 </head>
+
 <body>
-    
+    <h1>Cadastro de Usuário</h1>
 
+    <form action="https://www.w3schools.com/action_page.php" method="POST">
+        <input type="hidden" name="id" value="10">
+        Nome: <input type="text" name="nome" minlength="5" maxlength="10" required=""><br>
+        Telefone: <input type="text" name="número" minlength="11" maxlength="11" required=""><br>
+        E-mail: <input type="email" name="email" required=""><br>
+        Data de nascimento: <input type="date" name="dataNascimento" required=""><br>
+        Gênero:<br>
+        <input type="radio" name="genero" value="M" checked=""> Masculino<br>
+        <input type="radio" name="genero" value="F"> Feminino<br>
+        <input type="radio" name="genero" value="N"> Prefiro não informar<br>
+        Senha: <input type="text" name="senha" required=""><br>
+        <input type="submit" value="Cadastrar Usuário">
 
+    </form>
+    <hr>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <footer>
-            Criado e desenvolvido por Izaak &copy; 2026 -
-            <a href="https://izaaksantos.com.br" target="_blank">IzaakSantos.com.br</a>
-        </footer>
+    <footer>
+        Criado e desenvolvido por Izaak &copy; 2026 -
+        <a href="https://izaaksantos.com.br" target="_blank">IzaakSantos.com.br</a>
+    </footer>
 </body>
 </html>
