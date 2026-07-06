@@ -1,0 +1,56 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background-color: whitesmoke;
+} 
+.menulist{
+    list-style: none;
+    background-color: rgb(95, 234, 111);
+}
+.menuitem{
+    float: left; 
+    position: relative;
+    background-color: gold;
+}
+.menuitem a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 15px 20px
+}
+.menuitem a:hover{
+    background-color: #444;
+}
+.dropcontent{
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0,0,0,.2);
+}
+.dropcontent a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 12px 16px;
+}
+.menulist > .menuitem > a:hover{
+    background-color:#444;
+}
+.menuitem:hover > .dropcontent{
+    display: block;
+}
+.active {
+    background-color: green;
+    color:black;
+}
+.dropcontent{
+    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+}
