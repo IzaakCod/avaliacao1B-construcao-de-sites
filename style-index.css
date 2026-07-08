@@ -2,12 +2,26 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-
 }
-
 body {
     background-color: whitesmoke;
 } 
+iframe { /* (Seu vídeo do YouTube) */ 
+    display: block;/* Ao mudar para display block, o iframe passa a exigir uma linha inteira só para ele, forçando uma quebra de linha antes e depois.
+                     Isso impede que qualquer texto ou nome fique colado na lateral do vídeo. */
+    margin: 20px 0; /* Adiciona um espaço em cima e embaixo do vídeo, mantendo as laterais zeradas */
+    max-width: 100%; /* Garante que não vaze da tela do dispositivo que está sendo visto */
+}
+main { /* (O contêiner principal da página) */
+    clear: both; /* Esta é a regra mágica que empurrou o conteúdo para baixo do menu. Se o seu menu estiver usando técnicas como float: left ou float: right,
+                 os elementos que vêm depois tendem a subir e preencher o espaço vazio ao lado dele. O clear: both diz ao navegador: "ignore os espaços ao lado, vá para debaixo de qualquer elemento flutuante anterior". */
+    display: block; /* Garante que o contêiner principal aja como um bloco estrutural sólido. */
+    width: 100%; /* Faz com que a área principal ocupe toda a largura da tela. */
+}
+p { /* (Parágrafos de texto) */
+    clear: both; /* Assim como no main, aplicar isso aos parágrafos garante que nenhum texto flutue acidentalmente para o lado do menu ou de imagens flutuantes.
+                 Ele obriga o texto a sempre iniciar em uma linha limpa abaixo dos elementos anteriores. */
+}
 .menulist{
     list-style: none;
     background-color: rgb(95, 234, 111);
@@ -15,16 +29,16 @@ body {
 .menuitem{
     float: left; 
     position: relative;
-    background-color: gold;
+    background-color: rgb(69, 126, 239)
 }
 .menuitem a{
     display: block;
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 15px 20px
 }
 .menuitem a:hover{
-    background-color: #444;
+    background-color: rgb(135, 155, 196);
 }
 .dropcontent{
     position: absolute;
@@ -32,25 +46,34 @@ body {
     top: 100%;
     left: 0;
     min-width: 160px;
-    background-color: white;
+    background-color: rgb(69, 126, 239);
     box-shadow: 0px 8px 16px rgba(0,0,0,.2);
 }
 .dropcontent a{
     display: block;
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 12px 16px;
 }
 .menulist > .menuitem > a:hover{
-    background-color:#444;
+    background-color:  rgb(135, 155, 196);
 }
 .menuitem:hover > .dropcontent{
     display: block;
 }
 .active {
-    background-color: green;
     color:black;
 }
-.dropcontent{
-    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+h1 {
+    clear: both; /* Diz para o título (h1) e para o formulário (form) que eles não podem ficar do lado de nenhum outro elemento (como o seu menu azul).
+                 Eles são obrigados a "limpar" o espaço e começar na próxima linha disponível abaixo dele. */
+    display: block;
+    padding-top: 10px; /*Serve para dar um respiro visual, assim o texto "Cadastro de Usuário" não fica tão colado no menu quando descer! */
+}
+form {
+    clear: both;
+    display: block;
+}
+.subtitulo{
+    color: rgb(21, 20, 20); /* Serve para mudar a cor do subtitulo que definir */
 }
