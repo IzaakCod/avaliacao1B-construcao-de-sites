@@ -13,22 +13,25 @@
     <header>
         <nav>
             <ul class="menulist ">
-                <li class="menuitem"><a href="index.html" class="active">Início</a></li>
-                <li class="menuitem"><a href="treinos.html">Treinos</a></li>
-                <li class="menuitem"><a href="alimentacao.html">Receitas Fit</a></li>
-                <li class="menuitem"><a href="login.html">Cadastro</a></li>
+                <li class="menuitem"><a href="index.html" class="active">🏠 Início</a></li>
+                <li class="menuitem"><a href="treinos.html">🏋️ Treinos</a></li>
+                <li class="menuitem"><a href="alimentacao.html">🥗 Receitas Fit</a></li>
+                <li class="menuitem"><a href="login.html">👤 Cadastro</a></li>
                 <li class="menuitem">
-                    <a href="#" class="dropbutton">Contato</a>
+                    <a href="#" class="dropbutton">📧 Contato</a>
                     <div class="dropcontent">
-                        <a href="https://github.com/" target="_blank">Github</a>
-                        <a href="https://www.linkedin.com/in/izaak-nascimento-78678040a" target="_blank">Linkedin</a>
-                        <a href="https://www.instagram.com/izaaksntts?igsh=MWZxOWgxNDcxbGVwMA%3D%3D"
-                            target="_blank">Instagram</a>
+                        <a href="https://github.com/" target="_blank">📂 Github</a>
+                        <a href="https://www.linkedin.com/in/izaak-nascimento-78678040a" target="_blank">💼 Linkedin</a>
+                        <a href="https://www.instagram.com/izaaksntts?igsh=MWZxOWgxNDcxbGVwMA%3D%3D" target="_blank">📷
+                            Instagram</a>
+                        <!--O que faz o mailto:?
+                            Quando o usuário clicar em E-mail, o computador ou celular tenta abrir o programa de e-mail já com o destinatário preenchido.-->
+                        <a href="mailto:zaaknascimentosantos@gmail.com">✉️ E-mail</a>
                     </div>
                 </li>
             </ul>
         </nav>
-        <h1 >Cadastro de Usuário</h1>
+        <h1>Cadastro de Usuário</h1>
     </header>
     <main>
         <form action="https://www.w3schools.com/action_page.php" method="POST">
@@ -45,7 +48,7 @@
             <label for="data">Data de nascimento:</label>
             <input type="date" id="data" name="dataNascimento" required=""><br>
 
-            Gênero:<br>
+            <b>Gênero:</b><br>
             <label>
                 <input type="radio" name="genero" value="M"> Masculino
             </label><br>
@@ -60,7 +63,6 @@
 
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" minlength="6" required=""><br>
-            <hr>
             <label for="obs">Observações:</label>
             <textarea name="observacoes" id="obs" rows="4" cols="30"></textarea><br>
             <input type="submit" value="Cadastrar Usuário">
