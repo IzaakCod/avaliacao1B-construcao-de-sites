@@ -13,23 +13,25 @@
 body {
     /*Representa o corpo da página inteira.  */
     background-color: whitesmoke;
-/* Pinta o fundo da sua página inteira com um tom de cinza bem clarinho (quase branco). */
-    h3 {
-        margin: 1px 10px;
-    }
+    /* Pinta o fundo da sua página inteira com um tom de cinza bem clarinho (quase branco). */
+}
 
-    h4 {
-        margin: 10px
-    }
+h3 {
+    padding-top: 10px;
+    margin: 10px;
+}
+
+h4 {
+    margin: 10px
 }
 
 p {
-        /* (Parágrafos de texto) */
-        clear: both;
-        /* Assim como no main, aplicar isso aos parágrafos garante que nenhum texto flutue acidentalmente para o lado do menu ou de imagens flutuantes.
+    /* (Parágrafos de texto) */
+    clear: both;
+    /* Assim como no main, aplicar isso aos parágrafos garante que nenhum texto flutue acidentalmente para o lado do menu ou de imagens flutuantes.
          Ele obriga o texto a sempre iniciar em uma linha limpa abaixo dos elementos anteriores. */
-        margin: 10px 10px;
-    }
+    margin: 10px 10px;
+}
 
 iframe {
     /* (Seu vídeo do YouTube) */
@@ -158,31 +160,45 @@ h1 {
     /* Espaço abaixo. */
 }
 
-
 .subtitulo {
+    /* Classe criada para estilizar subtítulos da página. */
     color: rgb(21, 20, 20);
     /* Serve para mudar a cor do subtitulo que definir */
     margin: 10px;
+    /* Cria um espaço externo ao redor do subtítulo. */
     padding-top: 10px;
+    /* Adiciona um pequeno espaço interno acima do texto,
+       afastando-o do elemento anterior. */
 }
 
 footer {
+    /* Rodapé da página. É a área onde ficam informações finais do site, como autor,
+       direitos autorais e links para contato. */
     margin: 20px 540px;
+    /* Cria um espaçamento de 20px em cima e embaixo
+       e 540px nas laterais, deixando o rodapé mais centralizado.*/
 }
 
 table>caption {
+    /* Seleciona apenas o título (caption) que é filho direto da tabela (table). */
     margin: 10px;
+    /* Adiciona um pequeno espaço ao redor do título da tabela,
+       evitando que ele fique colado nela. */
 }
 
 img {
+    /* Estiliza todas as imagens da página. */
     display: block;
+    /* Faz a imagem ocupar uma linha inteira,
+       evitando que fique ao lado de outros elementos. */
     height: auto;
+    /* Mantém a altura proporcional da imagem,
+       evitando que ela fique distorcida. */
     width: auto;
+    /* Mantém a largura original da imagem
+       caso nenhuma largura específica seja definida. */
     margin: 10px;
-}
-
-table {
-    margin: 10px
+    /* Adiciona um espaço externo ao redor da imagem. */
 }
 
 ul {
@@ -196,8 +212,10 @@ ul {
 
 /* 1. Estilizando a própria tabela */
 table {
+    margin: 10px;
+    /* Espaçamento externo da tabela. */
     border: 2px solid black;
-    /* Borda externa da tabela */
+    /* Cria a borda externa da tabela */
     border-radius: 15px;
     /* Arredonda os cantos da tabela */
     border-spacing: 0;
@@ -210,34 +228,36 @@ table {
 th,
 td {
     border: 1px solid black;
-    /* Borda das células */
+    /* Cria as bordas das células */
     padding: 10px;
-    /* Espaçamento interno */
+    /* Espaço interno entre o texto e a borda. */
 }
 
 /* 3. Remove as bordas duplicadas */
 th,
 td {
     border-top: none;
-    /* Remove a borda superior */
+    /* Remove a borda superior das células. */
     border-left: none;
-    /* Remove a borda esquerda */
+    /* Remove a borda esquerda das células. */
 }
 
 th:first-child,
 td:first-child {
     border-left: none;
-    /* Primeira coluna sem borda à esquerda */
+    /* Garante que a primeira coluna não tenha borda à esquerda. */
 }
 
 tr:first-child th {
     border-top: none;
-    /* Primeira linha sem borda superior */
+    /* Garante que a primeira linha da tabela não tenha borda superior. */
 }
 
 /* 4. Destaca a linha quando o mouse passa */
 tbody tr:hover {
     background-color: rgb(217, 234, 250);
+    /* Muda a cor da linha quando o usuário passa o mouse,
+       facilitando a visualização da informação. */
 }
 
 /* 1. Estilizando o título da tabela */
@@ -272,19 +292,56 @@ form {
     /* fundo bem claro */
 }
 
-label {
+.titulo {
     font-weight: bold;
     /* Deixa os nomes em negrito. */
 }
 
-input,
+.titulo-genero {
+    display: block;
+    /* Transforma o label em um bloco.
+    Assim ele ocupa a linha inteira. Sem isso, ele fica como texto comum. */
+    font-weight: bold;
+    margin-bottom: 15px;
+    /* Cria um espaço entre  Gênero: e Masculino ○ */
+}
+
+.radio-group {
+    margin-bottom: 20px;
+    /* Serve apenas para dar um espaço entre o grupo dos rádios e o próximo campo (Senha) */
+}
+
+.radio-label {
+    display: block;
+    /* Cada opção fica em uma linha. */
+    font-weight: normal;
+    /* Tira o negrito. Só o "Gênero:" continua em negrito. */
+    margin-bottom: -5px;
+    /* Dá um espacinho entre uma opção e outra. */
+}
+
+/* Campos de texto do formulário */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
 textarea {
     width: 95%;
-    /* O campo ocupa quase toda a largura do formulário. */
+    /* ocupa quase toda a largura */
     padding: 8px;
-    /* Aumenta a altura do campo */
+    /* aumenta a altura */
     margin-top: 5px;
+    /* espaço acima */
     margin-bottom: 12px;
+    /* espaço abaixo */
+}
+
+input[type="radio"] {
+    width: auto;
+    /* O navegador escolhe a largura normal da bolinha. */
+    margin-right: 6px;
+    /* Cria um pequeno espaço entre a bolinha e a palavra. */
 }
 
 input[type="submit"] {

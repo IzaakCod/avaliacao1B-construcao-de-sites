@@ -35,35 +35,44 @@
     </header>
     <main>
         <form action="https://www.w3schools.com/action_page.php" method="POST">
+
             <input type="hidden" name="id" value="10">
-            <label for="nome">Nome:</label>
+
+            <label class="titulo" for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" minlength="5" maxlength="15" required=""><br>
 
-            <label for="telefone">Telefone:</label>
+            <label class="titulo" for="telefone">Telefone:</label>
             <input type="tel" id="telefone" name="telefone" maxlength="11" pattern="[0-9]{11}" required=""><br>
 
-            <label for="email">Email:</label>
+            <label class="titulo" for="email">Email:</label>
             <input type="email" id="email" name="email" required=""><br>
 
-            <label for="data">Data de nascimento:</label>
+            <label class="titulo" for="data">Data de nascimento:</label>
             <input type="date" id="data" name="dataNascimento" required=""><br>
 
-            <b>Gênero:</b><br>
-            <label>
-                <input type="radio" name="genero" value="M"> Masculino
-            </label><br>
+            <label class="titulo-genero">Gênero:</label>
 
-            <label>
-                <input type="radio" name="genero" value="F"> Feminino
-            </label><br>
+            <div class="radio-group">
+                <label class="radio-label">
+                    Masculino
+                    <input type="radio" name="genero" value="M">
+                </label><br>
 
-            <label>
-                <input type="radio" name="genero" value="N"> Prefiro não informar
-            </label><br>
+                <label class="radio-label">
+                    Feminino
+                    <input type="radio" name="genero" value="F">
+                </label><br>
 
-            <label for="senha">Senha:</label>
+                <label class="radio-label">
+                    Prefiro não informar
+                    <input type="radio" name="genero" value="N">
+                </label>
+            </div>
+
+            <label class="titulo" for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" minlength="6" required=""><br>
-            <label for="obs">Observações:</label>
+
+            <label class="titulo" for="obs">Observações:</label>
             <textarea name="observacoes" id="obs" rows="4" cols="30"></textarea><br>
             <input type="submit" value="Cadastrar Usuário">
         </form>
