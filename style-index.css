@@ -12,13 +12,39 @@
 
 body {
     /*Representa o corpo da página inteira.  */
-    background-color: whitesmoke;
+    background-color: rgba(125, 105, 105, 0.29);
     /* Pinta o fundo da sua página inteira com um tom de cinza bem clarinho (quase branco). */
+}
+
+h1 {
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    clear: both;
+    /* Diz para o título (h1) e para o formulário (form) que eles não podem ficar do lado de nenhum outro elemento (como o seu menu azul).
+    Eles são obrigados a "limpar" o espaço e começar na próxima linha disponível abaixo dele. */
+    display: block;
+    padding-top: 10px;
+    /*Serve para dar um respiro visual, assim o texto "Cadastro de Usuário" não fica tão colado no menu quando descer! */
+    text-align: center;
+    /*Centraliza o texto.  */
+    margin-top: 20px;
+    /* Espaço acima do título. */
+    margin-bottom: 20px;
+    /* Espaço abaixo do título. */
+    font-size: 28px;
+}
+
+@media (max-width:768px) {
+    h1 {
+        font-size: 28px;
+        /* No celular o título fica um pouco menor. */
+    }
 }
 
 h3 {
     padding-top: 10px;
     margin: 10px;
+    font-size: 20px;
 }
 
 h4 {
@@ -29,26 +55,26 @@ p {
     /* (Parágrafos de texto) */
     clear: both;
     /* Assim como no main, aplicar isso aos parágrafos garante que nenhum texto flutue acidentalmente para o lado do menu ou de imagens flutuantes.
-         Ele obriga o texto a sempre iniciar em uma linha limpa abaixo dos elementos anteriores. */
-    margin: 10px 10px;
+    Ele obriga o texto a sempre iniciar em uma linha limpa abaixo dos elementos anteriores. */
+    margin: 15px;
 }
 
 iframe {
     /* (Seu vídeo do YouTube) */
     display: block;
     /* Ao mudar para display block, o iframe passa a exigir uma linha inteira só para ele, forçando uma quebra de linha antes e depois.
-                     Isso impede que qualquer texto ou nome fique colado na lateral do vídeo. */
-    margin: 20px 10px;
-    /* Adiciona um espaço em cima e embaixo do vídeo, mantendo as laterais zeradas */
+    Isso impede que qualquer texto ou nome fique colado na lateral do vídeo. */
     max-width: 100%;
     /* Garante que não vaze da tela do dispositivo que está sendo visto */
+    margin: 20px auto;
+    /* Adiciona um espaço em cima e embaixo do vídeo, mantendo as laterais zeradas */
 }
 
 main {
     /* (O contêiner principal da página) */
     clear: both;
     /* Esta é a regra mágica que empurrou o conteúdo para baixo do menu. Se o seu menu estiver usando técnicas como float: left ou float: right,
-                 os elementos que vêm depois tendem a subir e preencher o espaço vazio ao lado dele. O clear: both diz ao navegador: "ignore os espaços ao lado, vá para debaixo de qualquer elemento flutuante anterior". */
+    os elementos que vêm depois tendem a subir e preencher o espaço vazio ao lado dele. O clear: both diz ao navegador: "ignore os espaços ao lado, vá para debaixo de qualquer elemento flutuante anterior". */
     display: block;
     /* Garante que o contêiner principal aja como um bloco estrutural sólido. */
     width: 100%;
@@ -56,18 +82,20 @@ main {
 }
 
 .menulist {
-    /* O Menu Principal (.menulist: .menulist: É a lista (geralmente uma tag <ul>) que guarda todo o menu., .menuitem, .menuitem a) */
     list-style: none;
-    /* Remove aquelas bolinhas/marcadores padrão de listas do HTML. */
-    background-color: rgb(95, 234, 111);
-    /* Coloca um fundo verde para essa lista. */
+
+    display: flex;
+    /* Coloca todos os itens lado a lado */
+
+    justify-content: flex-start;
+    /* Alinha os itens à esquerda */
+
+    flex-wrap: wrap;
+    /* Se faltar espaço, permite quebrar a linha */
 }
 
 .menuitem {
     /* .menuitem: São os itens individuais do menu (geralmente tags <li>). */
-    float: left;
-    /* Faz com que os itens fiquem alinhados um ao lado do outro na horizontal,
-     criando a barra de navegação (ao invés de ficarem um embaixo do outro). */
     position: relative;
     /* Deixa o item posicionado de forma "relativa". Isso é essencial para que o submenu saiba de onde ele deve "nascer" quando for ativado. */
     background-color: rgb(69, 126, 239)
@@ -136,30 +164,6 @@ main {
     display: block;
 }
 
-.active {
-    /* A Classe Ativa (.active) */
-    background-color: black;
-    /* Deixa o botão que está com a classe active na cor desejada  */
-    color: black;
-    /* .active: Tem apenas color: black;. Geralmente você coloca essa classe na página em que o usuário está no momento 
-    (por exemplo, se ele está na aba "Treinos", a palavra "Treinos" fica preta para destacar onde ele se encontra). */
-}
-
-h1 {
-    clear: both;
-    /* Diz para o título (h1) e para o formulário (form) que eles não podem ficar do lado de nenhum outro elemento (como o seu menu azul).
-    Eles são obrigados a "limpar" o espaço e começar na próxima linha disponível abaixo dele. */
-    display: block;
-    padding-top: 10px;
-    /*Serve para dar um respiro visual, assim o texto "Cadastro de Usuário" não fica tão colado no menu quando descer! */
-    text-align: center;
-    /*Centraliza o texto.  */
-    margin-top: 20px;
-    /* Espaço acima. */
-    margin-bottom: 20px;
-    /* Espaço abaixo. */
-}
-
 .subtitulo {
     /* Classe criada para estilizar subtítulos da página. */
     color: rgb(21, 20, 20);
@@ -174,9 +178,9 @@ h1 {
 footer {
     /* Rodapé da página. É a área onde ficam informações finais do site, como autor,
        direitos autorais e links para contato. */
-    margin: 20px 540px;
-    /* Cria um espaçamento de 20px em cima e embaixo
-       e 540px nas laterais, deixando o rodapé mais centralizado.*/
+    text-align: center;
+    margin: 20px;
+    /* Cria um espaçamento de 20px em cima e embaixo, deixando o rodapé mais centralizado.*/
 }
 
 table>caption {
@@ -191,12 +195,10 @@ img {
     display: block;
     /* Faz a imagem ocupar uma linha inteira,
        evitando que fique ao lado de outros elementos. */
+    max-width: 100%;
+    /* Nunca deixa a imagem ser maior que a tela.. */
     height: auto;
-    /* Mantém a altura proporcional da imagem,
-       evitando que ela fique distorcida. */
-    width: auto;
-    /* Mantém a largura original da imagem
-       caso nenhuma largura específica seja definida. */
+    /* Mantém a proporção da imagem. */
     margin: 10px;
     /* Adiciona um espaço externo ao redor da imagem. */
 }
@@ -212,16 +214,20 @@ ul {
 
 /* 1. Estilizando a própria tabela */
 table {
-    margin: 10px;
-    /* Espaçamento externo da tabela. */
+    margin: 20px auto;
+    /* Espaçamento externo da tabela e centralização. */
+    width: 95%;
+    /* Ela ocupará toda a largura disponível. */
     border: 2px solid black;
     /* Cria a borda externa da tabela */
-    border-radius: 15px;
-    /* Arredonda os cantos da tabela */
-    border-spacing: 0;
-    /* Remove o espaço entre as células */
-    overflow: hidden;
-    /* Faz os cantos respeitarem o border-radius */
+    max-width: 900px;
+    /* Nunca fica gigantesca. */
+}
+
+.tabela {
+
+    overflow-x: auto;
+
 }
 
 /* 2. Estilizando as células */
@@ -278,8 +284,9 @@ form {
     /* Assim como usamos no main e no h1, essa regra diz ao formulário para ignorar qualquer elemento flutuante (como os itens do menu que usam float: left)
     e pular para a próxima linha limpa. Isso garante que o formulário fique perfeitamente alinhado abaixo do menu, e não espremido do lado dele. */
     display: block;
-    width: 450px;
+    width: 90%;
     /* largura do formulário */
+    max-width: 450px;
     margin: 20px auto;
     /* centraliza o formulário */
     padding: 20px;
@@ -360,4 +367,29 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #3b65c7;
     /* Quando o usuário passa o mouse, o botão muda um pouco de cor. */
+}
+
+@media (max-width:768px) {
+
+    .menulist {
+
+        flex-direction: column;
+        /* Coloca os itens um abaixo do outro */
+
+    }
+
+    .menuitem {
+
+        width: 100%;
+        /* Cada botão ocupa toda a largura */
+
+    }
+
+    .dropcontent {
+
+        position: static;
+        /* O submenu acompanha o fluxo normal */
+
+    }
+
 }
